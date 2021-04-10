@@ -4,11 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @AllArgsConstructor
-public enum ApplicationUserPermission {
+public enum UserPermissions {
     TODO_READ("todo:read"),
     TODO_WRITE("todo:write"),
     TODO_MANAGEMENT("todo:management");
 
     @Getter
-    private String permission;
+    private final String permission;
 }

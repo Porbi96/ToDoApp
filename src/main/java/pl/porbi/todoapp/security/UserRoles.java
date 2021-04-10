@@ -8,15 +8,15 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static pl.porbi.todoapp.security.ApplicationUserPermission.*;
+import static pl.porbi.todoapp.security.UserPermissions.*;
 
 @AllArgsConstructor
-public enum ApplicationUserRole {
+public enum UserRoles {
     ADMIN(Sets.newHashSet(TODO_MANAGEMENT)),
     USER(Sets.newHashSet(TODO_READ, TODO_WRITE));
 
     @Getter
-    private final Set<ApplicationUserPermission> permissions;
+    private final Set<UserPermissions> permissions;
 
     public Set<SimpleGrantedAuthority> getGrantedAuthorities() {
         Set<SimpleGrantedAuthority> authorities = getPermissions().stream()
